@@ -1,9 +1,5 @@
 from src.tokenizer import Tokenizer
 
-def test_constructor():
-    t = Tokenizer()
-    assert t is not None
-
 def test_empty_string_produces_no_tokens():
     t = Tokenizer()
 
@@ -65,7 +61,7 @@ def test_parse_json():
             '}',
         ]
 
-def test_bracket_balance():
+def test_error_bracket_balance():
     t = Tokenizer()
 
     err = t.from_string('[](){}')
@@ -73,9 +69,6 @@ def test_bracket_balance():
 
     err = t.from_string('{([][]()){[[]()]}}()')
     assert err is None
-
-def test_error_bracket_balance():
-    t = Tokenizer()
 
     err = t.from_string('{')
     assert err is not None
@@ -105,4 +98,3 @@ def test_from_string_resets_state():
 
     t.from_string('two')
     assert t.get_all() == ['two']
-
