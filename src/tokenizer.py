@@ -1,6 +1,9 @@
+"""Tokenizer accepts a string and converts it to a list of tokens
+"""
+
 class Tokenizer:
     """Tokenizer accepts a string and converts it to a list of tokens
-    
+
     A token might be a keyword, a symbol, an arbitrary string, a number, etc.
     A token is:
     - anything surrounded by single or double quotes
@@ -29,23 +32,21 @@ class Tokenizer:
     Raw: int main(char[])
     Result: ['int', 'main', '(', 'char', '[', ']', ')']
     """
-    
+
     def __init__(self):
         """Initialize a tokenizer
         """
-        pass
 
-    def from_string(self, input):
+    def from_string(self, string):
         """Update the state of the tokenizer to use the given input string
 
         The tokenization can happen here or in get_all, either is fine
 
-        :param str input: string to be tokenized
+        :param str string: string to be tokenized
         :return: a string with error message if the brackets are unbalanced
             or there are unclosed quotes, None otherwise
         :rtype: bool
         """
-        pass
 
     def get_all(self):
         """Return all tokens
@@ -55,4 +56,3 @@ class Tokenizer:
             Return an empty list if errors occurred during tokenization
         :rtype: list
         """
-        pass

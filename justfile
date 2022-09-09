@@ -9,19 +9,15 @@ setup:
     if [ "$(which direnv)" == "" ]; then
         echo "direnv is not installed"
     fi
-    if [ "$(which coverage)" == "" ]; then
-        echo "coverage is not installed"
-    fi
 
 test: init
     @python -m pytest -s
 
 coverage: init
-    @coverage run -m pytest -s >/dev/null
-    @coverage report --omit="*/test*"
-    @coverage erase
+    @python -m coverage report --omit="*/test*"
 
 coverage-html: init
-    @coverage run -m pytest -s >/dev/null
-    @coverage html
-    @coverage erase
+    @python -m coverage html --omit="*/test*"
+
+lint: init
+    @python -m pylint src

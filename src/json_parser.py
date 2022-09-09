@@ -1,9 +1,15 @@
+"""Json constructs dicts/lists of objects from a json string given as an Iterator
+"""
+
+# pylint: disable=R0903
 class Json:
     """Json constructs dicts/lists of objects from a json string given as an Iterator
 
-    This is a simplified JSON parser. For the formal specification of JSON see https://www.json.org/json-en.html
-    
-    A json object looks like (source: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON):
+    This is a simplified JSON parser.
+    For the formal specification of JSON see https://www.json.org/json-en.html
+
+    A json object looks like
+    (source: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON):
     {
         "squadName": "Super hero squad",
         "formed": 2016,
@@ -33,21 +39,21 @@ class Json:
         - bool - true/false
         - null - None (we won't use those)
 
-    
     { denotes the start of an object (dict)
     } denotes the end of the current object
     [ denotes the start of a list
     ] denotes the end of the current list
     """
 
-    def __init__(self, iter):
+    def __init__(self, iterator):
         """Construct a Json parser from an iterator
+
+         :param iterator Iterator: Iterator, which to consume during compilation
         """
-        pass
 
     def compile(self):
         """Consume all tokens in the iterator to compile a Json object/array
-        
+
         :return: (json object, error), where the json object could be a dict or a list
 
         Assumptions: The input will always be valid JSON (the error should always be None)
@@ -57,4 +63,3 @@ class Json:
             boolean True and False respectively
         Numbers should be converted to floats (both integers and floating point numbers)
         """
-        pass
