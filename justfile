@@ -2,7 +2,7 @@ init:
     @pip install -r requirements.txt >/dev/null 2>&1
 
 generate-requirements:
-    @pip freeze -r requirements.txt
+    @pip freeze > requirements.txt
 
 setup:
     #!/usr/bin/env bash
@@ -21,3 +21,6 @@ coverage-html: init
 
 lint: init
     @python -m pylint src
+
+prospector: init
+    @python -m prospector
