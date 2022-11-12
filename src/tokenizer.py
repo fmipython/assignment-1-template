@@ -45,7 +45,6 @@ class Tokenizer:
         :param str string: string to be tokenized
         :return: a string with error message if the brackets are unbalanced
             or there are unclosed quotes, None otherwise
-        :rtype: bool
         """
 
     def get_all(self):
